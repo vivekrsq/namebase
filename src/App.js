@@ -30,11 +30,11 @@ let handleSubmit = (e)=>{
       Accept: 'application/json',
       'Content-Type': 'application/json'
     },
-    // body: { "records": [JSON.stringify(records)], "deleteRecords": []}
+    // body: JSON.stringify({records:[records],deleteRecords:[]})
   })
   .then(res=>res.json())
   .then(data=>console.log(data))
-  console.log(records);
+  console.log(JSON.stringify({records:[records],deleteRecords:[]}));
 }
 
 

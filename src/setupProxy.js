@@ -5,7 +5,8 @@ module.exports = function(app) {
     '/api/v0/dns/domains/wowman/nameserver',
     createProxyMiddleware({
       target: 'https://www.namebase.io',
-      changeOrigin: true,
+      changeOrigin: true
+      
     })
   );
 };
