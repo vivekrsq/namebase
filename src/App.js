@@ -22,14 +22,15 @@ let handleSubmit = (e)=>{
   const credentials = Buffer.from(`587a87d68d13ce981eb3fd6753f30d1b96489a51cc002e917556c17ee4292960:c8064a8641bd513fb05f3f1df9f1d3efda61d912447f550bc8d28ff508997c2e`);
   const encodedCredentials = credentials.toString('base64');
   const authorization = `Basic ${encodedCredentials}`;
-  fetch('https://www.namebase.io/api/v0/dns/domains/wowman/nameserver', {
+  fetch('/api/v0/dns/domains/wowman/nameserver', {
     method: 'GET',
     headers: {
       Authorization: authorization,
       
       Accept: 'application/json',
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
+    // body: { "records": [JSON.stringify(records)], "deleteRecords": []}
   })
   .then(res=>res.json())
   .then(data=>console.log(data))
@@ -67,7 +68,7 @@ let handleSubmit = (e)=>{
     <button type="submit" className="btn btn-primary">Update</button>
   </div>
 </form>
-<button type="submit" className="btn btn-primary" onClick={handleSubmit}>check</button>
+
     </div>
     </>
   );
